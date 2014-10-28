@@ -1,0 +1,11 @@
+%h1 VPC Calculator
+%p.lead Caclulate subnet sizing based on AZs, subnets and VPC CIDR size.
+%form{ :action => "", :method => "post"}
+  %fieldset
+    %label{:for => "cidr"} CIDR:
+    %input{:type => "text", :name => "cidr", :value => @cidr, :class => "text", :size => 20}
+    %label{:for => "azs"} AZs:
+    %input{:type => "text", :name => "azs", :value => @azs, :class => "text", :size => 2}
+    %label{:for => "subs"} Subs:
+    %input{:type => "text", :name => "subs", :value => @subs,  :class => "text", :size => 2}
+    %input{:type => "submit", :value => "Build", :class => "button"}

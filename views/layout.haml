@@ -1,0 +1,33 @@
+!!!
+%html
+  %head
+    %meta{'charset' => 'utf-8'}/
+    %meta{'http-equiv' => 'X-UA-Compatible', :content => 'IE=edge'}/
+    %meta{'http-equiv' => 'Content-Type', :content => 'text/html'}/
+    %meta{'name' => 'viewport', :content => 'width=device-width, initial-scale=1'}/
+    %title VPC Calculator
+    / HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries
+    /[if lt IE 9]
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+
+    %link{:href => "/css/bootstrap.css", :rel => "stylesheet"}/
+    %link{:href => "/css/bootstrap-responsive.css", :rel => "stylesheet"}/
+
+  %body
+    .container
+ 
+      .page-header
+        =haml :'_page-header', :locals => {:cidr => @cidr, :azs => @azs, :subs => @subs}
+
+      .content
+        =yield
+ 
+      .page-footer
+        %p
+          Chuck Meyer, 2014 
+
+      / jQuery (necessary for Bootstrap's JavaScript plugins) 
+      %script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js")
+      / Include all compiled plugins (below), or include individual files as needed 
+      %script(src="js/bootstrap.min.js")
+      %script(src="js/jquery.js")
